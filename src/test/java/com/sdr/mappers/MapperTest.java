@@ -10,13 +10,11 @@ import com.sdr.entity.CarType;
 import com.sdr.entity.Model;
 import com.sdr.entity.Person;
 import com.sdr.holders.EntityHolder;
-import com.sdr.services.EnterPointTest;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 

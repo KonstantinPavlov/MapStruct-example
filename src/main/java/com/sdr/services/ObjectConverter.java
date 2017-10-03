@@ -7,13 +7,13 @@ import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
 /**
+ * Reflection converter
+ * <p>
  * Created by Konstantin on 03.10.2017.
  */
 @Component
@@ -48,10 +48,6 @@ public class ObjectConverter {
             }
         }
         return resultMap;
-    }
-
-    private boolean isCollectionMethod(Method prop) {
-        return prop.getReturnType().isAssignableFrom(Collection.class) || prop.getReturnType().isAssignableFrom(List.class);
     }
 
     private Object getObjectData(Object obj, AccessibleObject prop) throws IllegalAccessException, InvocationTargetException {

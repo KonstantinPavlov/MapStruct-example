@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Simple Entity Holder
+ * <p>
  * Created by Konstantin on 29.09.2017.
  */
 @Component
@@ -28,11 +30,11 @@ public class EntityHolder {
         return gen;
     }
 
-    public CarType getCarType(Long id){
+    public CarType getCarType(Long id) {
         return carTypeMap.get(id);
     }
 
-    public Company getCompany(Long id){
+    public Company getCompany(Long id) {
         return companyMap.get(id);
     }
 

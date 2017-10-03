@@ -23,9 +23,6 @@ public class ObjectDifferTest {
     private static final Logger LOGGER = Logger.getLogger(ObjectDifferTest.class);
 
     @Autowired
-    private ObjectConverter converter;
-
-    @Autowired
     private EntityHolder entityHolder;
 
     @Autowired
@@ -45,12 +42,12 @@ public class ObjectDifferTest {
 
         // Не измененный объект
         LOGGER.info("No changes for object");
-        Assert.assertFalse(differ.isDifferent(carDTO,car));
+        Assert.assertFalse(differ.isDifferent(carDTO, car));
 
         // Изменение простого поля
         car.setName("Opel ne astra");
         LOGGER.info("Changes in name");
-        Assert.assertTrue(differ.isDifferent(carDTO,car));
+        Assert.assertTrue(differ.isDifferent(carDTO, car));
 
         // Тест на ссылку
         LOGGER.info("Changes in link - model");
@@ -58,7 +55,7 @@ public class ObjectDifferTest {
         car.setModel(model_two);
         car.setName("Opel astra");
         car.getCarType().setName("New name");
-        Assert.assertTrue(differ.isDifferent(carDTO,car));
+        Assert.assertTrue(differ.isDifferent(carDTO, car));
 
     }
 }

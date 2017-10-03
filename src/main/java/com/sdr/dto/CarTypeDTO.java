@@ -1,7 +1,6 @@
 package com.sdr.dto;
 
 import com.sdr.dto.base.EntityDTO;
-import com.sdr.entity.Company;
 
 /**
  * Created by Konstantin on 29.09.2017.

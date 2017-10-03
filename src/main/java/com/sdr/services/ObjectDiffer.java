@@ -21,8 +21,12 @@ public class ObjectDiffer {
 
     private static final Logger LOGGER = Logger.getLogger(ObjectDiffer.class);
 
-    @Autowired
     private ObjectConverter converter;
+
+    @Autowired
+    public ObjectDiffer(ObjectConverter converter) {
+        this.converter = converter;
+    }
 
     public <D extends EntityDTO, R extends Entity> boolean isDifferent(D dto, R record) {
         boolean isDifferent = false;
@@ -39,7 +43,7 @@ public class ObjectDiffer {
                                     if (!entry.getValue().equals(method.invoke(record))) {
                                         isDifferent = true;
                                         LOGGER.info("Record " + record + " method " + method + " isDifferent ? " + isDifferent);
-                                        LOGGER.info("Updating value in "+ entry.getKey());
+                                        LOGGER.info("Updating value in " + entry.getKey());
                                     }
                                 }
                                 break;
@@ -100,7 +104,6 @@ public class ObjectDiffer {
     private boolean checkLink(Object value) {
         return value instanceof Long;
     }
-
 
     private MethodType getMethodReturnType(AccessibleObject method) {
         if (isValueMethod((Method) method)) {

@@ -3,7 +3,6 @@ package com.sdr.mappers;
 import com.sdr.dto.CarTypeDTO;
 import com.sdr.entity.CarType;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 /**
  * Created by Konstantin on 29.09.2017.
