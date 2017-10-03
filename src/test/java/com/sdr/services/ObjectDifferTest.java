@@ -57,6 +57,7 @@ public class ObjectDifferTest {
         Model model_two = new Model("Sedan 2", entityHolder.getCompany(1L), 2L);
         car.setModel(model_two);
         car.setName("Opel astra");
+        car.getCarType().setName("New name");
         Assert.assertTrue(differ.isDifferent(carDTO,car));
 
     }

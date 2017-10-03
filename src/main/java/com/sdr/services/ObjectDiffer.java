@@ -38,7 +38,8 @@ public class ObjectDiffer {
                                 if (entry.getValue() != null) {
                                     if (!entry.getValue().equals(method.invoke(record))) {
                                         isDifferent = true;
-                                        LOGGER.info(" Record " + record + " method " + method + " isDifferent ? " + isDifferent);
+                                        LOGGER.info("Record " + record + " method " + method + " isDifferent ? " + isDifferent);
+                                        LOGGER.info("Updating value in "+ entry.getKey());
                                     }
                                 }
                                 break;
@@ -68,6 +69,7 @@ public class ObjectDiffer {
                                 } else if (!idLink) {
                                     LOGGER.info("Link " + entry.getKey() + " is incorrect");
                                     isDifferent = true;
+                                    LOGGER.info("Creating new " + method.getReturnType());
                                 }
                                 break;
                             }
